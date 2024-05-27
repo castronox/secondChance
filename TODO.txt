@@ -1,0 +1,60 @@
+
+-------------------------------------------------------------------------------------------------------------
+LISTA DE COSAS PENDIENTES - TODO LIST
+
+Lista de mecanismos y herramientas que se irán incorporando (o no) en próximas versiones
+del framework FastLight.
+
+Autor: Robert Sallent
+Última revisión: 21/05/24
+
+-------------------------------------------------------------------------------------------------------------
+- CONFIG
+	- Ficheros de configuración de entorno.
+	- helper env()
+
+- CORE/HTTP
+	- Método json() en Response
+	- Método xml() en Response
+	- Método header() en Response que permite añadir un header
+	- Método headers() en Response que permiten añadir una lista de headers
+	- Método header() en Request que permite recuperar un header
+	- Método headers() en Request que permite recuperar los headers a modo de array asociativo
+	- Estudiar la posibilidad de tener JsonRequest y XmlRequest
+
+- LIBRARIES
+	- Añadir código HTTP a las redirecciones (Response::redirect()).
+	- Implementar un sistema de seeding (uso de faker?).
+	- Mejorar el método XML::encode() para que sea recursivo y testearlo a fondo. Probarlo con APIs.
+
+- MODELO
+	- Métodos owns() e ownedBy() en Model.
+	- Método Model::insertRelated(entidad, idrelacionado, tabla)
+	
+- TEMPLATES Y VISTAS
+	- Usar objetos template (las vistas deben tener acceso, así que hay que pasarlo de forma automatizada)
+    - Mover las operaciones de view() hacia Response::view() y unificar parámetros y criterios. Testearlo todo.
+-   - Panel del administrador (Log, operaciones con usuarios...).
+
+- HELPERS
+	- helper response() ?
+	- helper jsonResponse() ?
+	- helper xmlResponse()	?
+	
+- API
+	- implementar mecanismo de API Keys	
+
+- PETICIONES ASÍNCRONAS.
+	- Añadir un controlador para procesar las peticiones asíncronas y retornar respuestas JSON (y XML?)
+
+- EXTRAS:
+	- En la vista del listado de errores, mostrar algunos gráficos de totales con chart.js
+	
+
+-------------------------------------------------------------------------------------------------------------
+ A evaluar... tal vez no se implemente por motivos docentes y se deja para los cursos de Laravel o Symfony
+-------------------------------------------------------------------------------------------------------------
+- Incoporar middleware.
+- Hacer uso de PSR4 para el autoload (poco probable que se implemente).
+
+                
