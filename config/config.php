@@ -47,7 +47,7 @@ define('AUTOLOAD_DIRECTORIES',  [
 /* -------------------------------------------------------------
  * APLICACIÓN
  * -------------------------------------------------------------*/
-define('APP_NAME','FastLight Framework'); // Título de la aplicación.
+define('APP_NAME','Second Chance'); // Título de la aplicación.
 define('APP_TYPE', 'WEB');                // Tipo de aplicación: WEB o API.
 
 // Controlador y método por defecto (solamente para APP_TYPE WEB).
@@ -55,7 +55,7 @@ define('DEFAULT_CONTROLLER', 'WelcomeController');
 define('DEFAULT_METHOD', 'index');
    
 // Email del administrador, para la operación de "contacto"
-define('ADMIN_EMAIL', 'robert@juegayestudia.com');
+define('ADMIN_EMAIL', 'castronox@gmail.com');
 
 // ¿Deben las cadenas vacías ser convertidas a NULL? 
 // se aplica all recuperar los datos de la petición mediante el objeto Request,
@@ -72,7 +72,7 @@ define('EMPTY_STRINGS_TO_NULL', true);
 define('DB_HOST','localhost');  // Host.
 define('DB_USER','root');       // Usuario.
 define('DB_PASS','');           // Password.
-define('DB_NAME','fastlight');  // Nombre de la base de datos.
+define('DB_NAME','secondchance');  // Nombre de la base de datos.
 define('DB_PORT',  3306);       // Puerto.
 define('DB_CHARSET','utf8');    // Codificación de caracteres.
 
