@@ -41,7 +41,7 @@ define('AUTOLOAD_DIRECTORIES',  [
     '../templates',         // plantillas para las vistas
     '../app/exceptions'     // excepciones
 ]);
- 
+
     
     
 /* -------------------------------------------------------------
@@ -53,7 +53,7 @@ define('APP_TYPE', 'WEB');                // Tipo de aplicación: WEB o API.
 // Controlador y método por defecto (solamente para APP_TYPE WEB).
 define('DEFAULT_CONTROLLER', 'WelcomeController');
 define('DEFAULT_METHOD', 'index');
-   
+
 // Email del administrador, para la operación de "contacto"
 define('ADMIN_EMAIL', 'castronox@gmail.com');
 
@@ -98,7 +98,8 @@ define('USER_ROLES', [
     'Supervisor'    => 'ROLE_SUPERVISOR',
     'Editor'        => 'ROLE_EDITOR',
     'Test'          => 'ROLE_TEST',
-    'API'           => 'ROLE_API'
+    'API'           => 'ROLE_API',
+    'Vendor'        => 'ROLE_VENDOR'
 ]);
 
 // Rol para el administrador (debe ser uno de los que están en la lista anterior).
@@ -201,4 +202,15 @@ define('ALLOW_CREDENTIALS', 'true');                 // ¿Se permite el envío d
 define('API_AUTHENTICATION', 'COOKIE'); // puede ser COOKIE (implementado) o KEY (no implementado aún)
 
     
+# Directorio donde se encuentrar las fotos de los usuarios
+define('USER_IMAGE_FOLDER','/images/users');
+
+# Imagen por defecto de las fotos de los usuarios
+define('DEFAULT_USER_IMAGE','user.png');
+
     
+# Directorio donde se encuentrar las fotos de los usuarios
+define('ANUNCIO_IMAGE_FOLDER','/images/fanuncios');
+
+
+define('DEFAULT_ANUNCIO_IMAGE','foto-del-producto.png');
