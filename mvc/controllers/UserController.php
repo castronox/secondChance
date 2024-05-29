@@ -19,10 +19,15 @@ class UserController extends Controller
     {
 
         Auth::check();  # Autorización (Solo identificados)
+        
+        $user = Login::user();
+        $anuncios = $user->hasMany('Anuncio');
+        
 
         # Carga la bvista home y le pasa el usuario identificado
         $this->loadView('user/home', [
-            'user' => Login::user()
+            'user' => Login::user(),
+            'anuncios' => $anuncios
         ]);
     }
 

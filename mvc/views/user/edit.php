@@ -57,6 +57,7 @@ Auth::admin();
                     <label for="phone">Teléfono: </label>
                     <input type="number" name="phone" value="<?= old('phone', $user->phone) ?>">
                     <br>
+                    
 
                     <label>Picture</label>
                     <input type="file" name="picture" accept="image/*" id="file-with-preview"

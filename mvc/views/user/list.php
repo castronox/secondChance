@@ -91,7 +91,8 @@ Auth::admin();
                         <td><?= $user->displayname ?></td>
                         <td><?= $user->email ?></td>
                         <td><?= $user->phone ?></td>
-                        <td><?= arrayToString($user->roles) ?></td>
+                        
+                        <td><?= arrayToString($user->roles,false,false) ?></td>
                         <td class="centrado">
                             <img src="<?= USER_IMAGE_FOLDER . '/' . ($user->picture ?? DEFAULT_USER_IMAGE) ?>" class="cover-mini"
                                 alt="Perfil de <?= $user->displayname ?>">
