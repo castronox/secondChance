@@ -26,6 +26,13 @@
     <?= (TEMPLATE)::getMenu() ?>
     <?= (TEMPLATE)::getFlashes() ?>
 
+    <!-- MIGAS -->
+    <?= (TEMPLATE)::getBreadCrumbs([
+    
+    'Nombre de la ruta' => '/Ruta/ruta',
+    'Nombre de la página destino' => NULL,
+    ]) ?>
+
     <main>
         <h1><?= APP_NAME ?></h1>
 

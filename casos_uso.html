@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos de Uso</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Casos de Uso</h1>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU001 Listar Anuncis
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a los usuarios ver una lista de todos los anuncios disponibles.</p>
+                <p><strong>Actores:</strong> Usuario</p>
+                <p><strong>Precondiciones:</strong> El usuario debe estar en la página principal o en una página de anuncios.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario accede a la sección de anuncios.</li>
+                    <li>El sistema muestra una lista de todos los anuncios disponibles.</li>
+                    <li>El usuario puede navegar a través de la lista y ver los títulos y descripciones breves de los anuncios.</li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> El usuario visualiza los anuncios disponibles.</p>
+                <p><strong>Excepciones:</strong> Si no hay anuncios disponibles, el sistema muestra un mensaje indicando que no hay anuncios para mostrar.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU002 Veure Anunci
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a los usuarios ver los detalles completos de un anuncio específico.</p>
+                <p><strong>Actores:</strong> Usuario</p>
+                <p><strong>Precondiciones:</strong> El usuario debe estar visualizando la lista de anuncios.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario selecciona un anuncio de la lista.</li>
+                    <li>El sistema muestra los detalles completos del anuncio seleccionado, incluyendo título, descripción, precio, imágenes, y datos de contacto del vendedor.</li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> El usuario visualiza la información detallada del anuncio seleccionado.</p>
+                <p><strong>Excepciones:</strong> Si el anuncio seleccionado ya no está disponible, el sistema muestra un mensaje de error y regresa a la lista de anuncios.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU003 Buscar Anunci
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a los usuarios buscar anuncios específicos utilizando criterios de búsqueda.</p>
+                <p><strong>Actores:</strong> Usuario</p>
+                <p><strong>Precondiciones:</strong> El usuario debe estar en la sección de búsqueda de anuncios.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario ingresa criterios de búsqueda (palabras clave, categoría, rango de precio, etc.).</li>
+                    <li>El usuario inicia la búsqueda.</li>
+                    <li>El sistema filtra y muestra los anuncios que coinciden con los criterios de búsqueda ingresados.</li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> El usuario visualiza una lista de anuncios que coinciden con los criterios de búsqueda.</p>
+                <p><strong>Excepciones:</strong> Si no se encuentran anuncios que coincidan con los criterios, el sistema muestra un mensaje indicando que no se encontraron resultados.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU004 Contacte
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a los usuarios contactar al vendedor de un anuncio.</p>
+                <p><strong>Actores:</strong> Usuario, Vendedor</p>
+                <p><strong>Precondiciones:</strong> El usuario debe estar visualizando los detalles de un anuncio.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario selecciona la opción de contactar al vendedor.</li>
+                    <li>El sistema muestra un formulario de contacto.</li>
+                    <li>El usuario llena el formulario con su mensaje y detalles de contacto.</li>
+                    <li>El usuario envía el mensaje.</li>
+                    <li>El sistema envía el mensaje al vendedor y muestra una confirmación al usuario.</li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> El mensaje es enviado al vendedor.</p>
+                <p><strong>Excepciones:</strong> Si hay un error en el envío del mensaje, el sistema muestra un mensaje de error y sugiere intentar nuevamente.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU005 Registre
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a nuevos usuarios registrarse en el sistema.</p>
+                <p><strong>Actores:</strong> Nuevo Usuario</p>
+                <p><strong>Precondiciones:</strong> El usuario debe acceder a la página de registro.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario selecciona la opción de registrarse.</li>
+                    <li>El sistema muestra un formulario de registro.</li>
+                    <li>El usuario completa el formulario con sus datos (nombre, correo electrónico, contraseña, etc.).</li>
+                    <li>El usuario envía el formulario.</li>
+                    <li>El sistema valida los datos y crea una nueva cuenta de usuario.</li>
+                    <li>El sistema muestra una confirmación de registro exitoso.</li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> Se crea una nueva cuenta de usuario.</p>
+                <p><strong>Excepciones:</strong> Si hay errores en los datos ingresados, el sistema muestra mensajes de error específicos y solicita correcciones.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU006 Publicar Anunci
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a los usuarios registrados publicar un nuevo anuncio.</p>
+                <p><strong>Actores:</strong> Usuario Registrado</p>
+                <p><strong>Precondiciones:</strong> El usuario debe estar registrado y haber iniciado sesión.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario accede a la sección para publicar un anuncio.</li>
+                    <li>El sistema muestra un formulario de publicación de anuncio.</li>
+                    <li>El usuario completa el formulario con los detalles del anuncio (título, descripción, precio, imágenes, etc.).</li>
+                    <li>El usuario envía el formulario.</li>
+                    <li>El sistema valida la información y publica el anuncio.</li>
+                    <li>El sistema muestra una confirmación de publicación exitosa.</li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> El anuncio es publicado y visible para otros usuarios.</p>
+                <p><strong>Excepciones:</strong> Si hay errores en los datos ingresados, el sistema muestra mensajes de error específicos y solicita correcciones.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU007 Modificar Anunci
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a los usuarios registrados modificar un anuncio existente.</p>
+                <p><strong>Actores:</strong> Usuario Registrado</p>
+                <p><strong>Precondiciones:</strong> El usuario debe estar registrado, haber iniciado sesión, y ser el propietario del anuncio.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario accede a la sección de sus anuncios.</li>
+                    <li>El usuario selecciona el anuncio que desea modificar.</li>
+                    <li>El sistema muestra el formulario de edición con los detalles actuales del anuncio.</li>
+                    <li>El usuario modifica los detalles del anuncio.</li>
+                    <li>El usuario envía el formulario modificado.</li>
+                    <li>El sistema valida la información y actualiza el anuncio.</li>
+                    <li>El sistema muestra una confirmación de modificación exitosa.</li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> El anuncio es actualizado con la nueva información.</p>
+                <p><strong>Excepciones:</strong> Si hay errores en los datos ingresados, el sistema muestra mensajes de error específicos y solicita correcciones. Si el usuario no es el propietario del anuncio, el sistema muestra un mensaje de error y no permite la modificación.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU008 Eliminar Anunci
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a los usuarios registrados eliminar un anuncio existente.</p>
+                <p><strong>Actores:</strong> Usuario Registrado</p>
+                <p><strong>Precondiciones:</strong> El usuario debe estar registrado, haber iniciado sesión, y ser el propietario del anuncio.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario accede a la sección de sus anuncios.</li>
+                    <li>El usuario selecciona el anuncio que desea eliminar.</li>
+                    <li>El sistema muestra una confirmación de eliminación.</li>
+                    <li>El usuario confirma la eliminación del anuncio.</li>
+                    <li>El sistema elimina el anuncio de la base de datos.</li>
+                    <li>El sistema muestra una confirmación de eliminación exitosa.</li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> El anuncio es eliminado y ya no es visible para otros usuarios.</p>
+                <p><strong>Excepciones:</strong> Si el usuario no es el propietario del anuncio, el sistema muestra un mensaje de error y no permite la eliminación. Si hay un error en el proceso de eliminación, el sistema muestra un mensaje de error y sugiere intentar nuevamente.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                CU009 Home
+            </div>
+            <div class="card-body">
+                <p><strong>Descripción:</strong> Permitir a los usuarios acceder a la página principal del sitio.</p>
+                <p><strong>Actores:</strong> Usuario</p>
+                <p><strong>Precondiciones:</strong> El usuario debe acceder al sitio web.</p>
+                <p><strong>Flujo Principal:</strong></p>
+                <ol>
+                    <li>El usuario accede a la página principal del sitio web.</li>
+                    <li>El sistema muestra el contenido de la página principal, que incluye:
+                        <ul>
+                            <li>Una barra de navegación con enlaces a diferentes secciones del sitio.</li>
+                            <li>Un buscador para buscar anuncios.</li>
+                            <li>Listado destacado de anuncios recientes o populares.</li>
+                            <li>Enlaces para registrarse o iniciar sesión (si el usuario no está autenticado).</li>
+                            <li>Enlaces a las secciones de publicar anuncio, ver perfil, etc. (si el usuario está autenticado).</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><strong>Postcondiciones:</strong> El usuario visualiza la página principal del sitio con las opciones de navegación disponibles.</p>
+                <p><strong>Excepciones:</strong> Si hay problemas técnicos que impiden cargar la página principal, el sistema muestra un mensaje de error y posibles soluciones (como recargar la página o intentar más tarde).</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -84,7 +84,7 @@ Auth::oneRole(['ROLE_ADMIN', 'ROLE_VENDOR']);
         echo "</td>";
         echo "<td>$anuncio->id</td>";
         echo "<td>$anuncio->nombre</td>";
-        echo "<td>$anuncio->precio</td>";
+        echo "<td>$anuncio->precio €</td> ";
         echo "<td>$anuncio->estado</td>";
         echo "</tr>";
     }

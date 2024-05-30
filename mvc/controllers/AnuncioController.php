@@ -58,7 +58,7 @@ class anuncioController extends Controller
     #                                                                      
     #       
     public function create(){
-        Auth::oneRole(['ROLE_ADMIN', 'ROLE_VENDOR']);
+        Auth::oneRole(['ROLE_ADMIN','ROLE_VENDOR']);
         
         view('anuncio/create',[
             'user' => Login::user()
@@ -154,8 +154,8 @@ class anuncioController extends Controller
 
     public function edit(int $id = 0)
 	{
-		# Implementa el acceso al rol de administrador o de bibliotecario
-		Auth::oneRole(['ROLE_ADMIN', 'ROLE_VENDOR']);
+		# Implementa el acceso al rol de administrador o de vendedor
+		Auth::oneRole(['ROLE_VENDOR']);
 
 		$anuncio = Anuncio::findOrFail($id, "No se encontró el anuncio.");
 
@@ -170,7 +170,7 @@ class anuncioController extends Controller
 	# Funcion para actualizar el anuncio
 	public function update()
 	{
-		# Implementa el acceso al rol de administrador o de bibliotecario
+		# Implementa el acceso al rol de administrador o de vendedor
 		Auth::oneRole(['ROLE_ADMIN', 'ROLE_VENDOR']);
 
 		if (!$this->request->has('actualizar'))
@@ -247,8 +247,8 @@ class anuncioController extends Controller
     
     public function delete(int $id = 0)
 	{
-		# Implementa el acceso al rol de administrador o de bibliotecario
-		Auth::oneRole(['ROLE_ADMIN', 'ROLE_LIBRARIAN']);
+		# Implementa el acceso al rol de administrador o de vendedor
+		Auth::oneRole(['ROLE_ADMIN', 'ROLE_VENDOR']);
 		
 		$anuncio = Anuncio::findOrFail($id, "No existe el anuncio");
 
@@ -274,7 +274,7 @@ class anuncioController extends Controller
 			$anuncio->deleteObject($anuncio->id);
 
 			if ($anuncio->portada)
-				File::remove('../public' . BOOK_IMAGE_FOLDER . '/' . $anuncio->portada, true);
+				File::remove('../public' . USER_IMAGE_FOLDER . '/' . $anuncio->foto, true);
 
 			Session::success("Se ha borrado el $anuncio->nombre correctamente.");
 			redirect("/anuncio/list");
