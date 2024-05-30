@@ -25,14 +25,28 @@
     <?= (TEMPLATE)::getHeader('Lista') ?>
     <?= (TEMPLATE)::getMenu() ?>
     <?= (TEMPLATE)::getFlashes() ?>
-
     <!-- MIGAS -->
-    <?= (TEMPLATE)::getBreadCrumbs([
-    
-    'Nombre de la ruta' => '/Ruta/ruta',
-    'Nombre de la página destino' => NULL,
-    ]) ?>
 
+    <?php
+    // Detectar el origen de la navegación desde la URL o cualquier otra fuente
+    $from = $_GET['from'] ?? 'show'; // Por defecto es 'show' si no se especifica
+    
+    // Definir las migas de pan
+    $migas = [
+        'Inicio' => '/',
+        'Lista de anuncios' => '/anuncio/list',
+    ];
+
+    if ($from === 'list') {
+        $migas["Editar anuncio $anuncio->id"] = NULL;
+    } else {
+        // Asumimos que el origen es 'show' o cualquier otro valor
+        $migas["Mostrar anuncio $anuncio->id"] = "/anuncio/show/$anuncio->id";
+        $migas["Editar anuncio $anuncio->id"] = NULL;
+    }
+    ?>
+        
+    <?= (TEMPLATE)::getBreadCrumbs($migas) ?>
     <main>
         <h1><?= APP_NAME ?></h1>
 
@@ -62,11 +76,7 @@
 			<a class="button" onclick="history.back()">Atrás</a>
 			<a class="button" href="/anuncio/list">Lista de usuarios</a>
 
-            <?php if(Login::oneRole(['ROLE_ADMIN','ROLE_VENDOR'])){ ?>
-			<a class="button" href="/anuncio/edit/<?= $anuncio->id ?>">Editar anuncio</a>
-			<a class="button" href="/anuncio/delete/<?= $anuncio->id ?>">Borrar anuncio</a>
 
-            <?php } ?>
 
 		</div>
 

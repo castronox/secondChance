@@ -23,6 +23,12 @@
 <?=(TEMPLATE)::getMenu()?>
 <?=(TEMPLATE)::getFlashes()?>
 
+<?= (TEMPLATE)::getBreadCrumbs([
+
+'Inicio' => '/',
+'Lista de anuncios' => NULL,
+]) ?>
+
 <main>
 <h1><?= APP_NAME ?></h1>
 

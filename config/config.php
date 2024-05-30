@@ -111,7 +111,7 @@ define('ADMIN_ROLE', 'ROLE_ADMIN');
  * LOGIN
  * -------------------------------------------------------------*/
 
-define('REDIRECT_AFTER_LOGIN', '/');                // Redirección tras login.
+define('REDIRECT_AFTER_LOGIN', '/user/home');                // Redirección tras login.
 
 define('LOG_LOGIN_ERRORS', false);                 // Guardar errores de login en fichero de log.
 define('LOGIN_ERRORS_FILE', '../logs/login.log');  // Nombre del fichero para los errores de login.
@@ -136,7 +136,7 @@ define('TEMPLATE', 'Template');
  * PAGINADOR
  * -------------------------------------------------------------*/
 
-define('RESULTS_PER_PAGE', 10);  // Número de resultados por página
+define('RESULTS_PER_PAGE', 1);  // Número de resultados por página
 
 
 

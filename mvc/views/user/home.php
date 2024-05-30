@@ -68,28 +68,40 @@ Auth::oneRole(['ROLE_ADMIN', 'ROLE_VENDOR']);
             echo "<p>No hay anuncios de este usuario.</p>";
         } else { ?>
 
-<table>
-    <tr>
-        <th>Foto</th>
-        <th>ID Anuncio</th>
-        <th>Nombre</th>
-        <th>Precio</th>
-        <th>Estado</th>
-    </tr>
-    <?php
-    foreach ($anuncios as $anuncio) {
-        echo "<tr>";
-        echo "<td class='centrado'>";
-        echo "<img src='" . ANUNCIO_IMAGE_FOLDER . '/' . ($anuncio->foto ?? DEFAULT_ANUNCIO_IMAGE) . "' class='cover-mini' alt='Portada de " . htmlspecialchars($anuncio->nombre, ENT_QUOTES, 'UTF-8') . "'>";
-        echo "</td>";
-        echo "<td>$anuncio->id</td>";
-        echo "<td>$anuncio->nombre</td>";
-        echo "<td>$anuncio->precio €</td> ";
-        echo "<td>$anuncio->estado</td>";
-        echo "</tr>";
-    }
-    ?>
-</table>
+            <table>
+                <tr>
+                    <th>Foto</th>
+                    <th>ID Anuncio</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Estado</th>
+                    <th>Operaciones</th>
+                </tr>
+                <?php
+                foreach ($anuncios as $anuncio) {
+                    echo "<tr>";
+                    echo "<td class='centrado'>";
+                    echo "<img src='" . ANUNCIO_IMAGE_FOLDER . '/' . ($anuncio->foto ?? DEFAULT_ANUNCIO_IMAGE) . "' class='cover-mini' alt='Portada de " . htmlspecialchars($anuncio->nombre, ENT_QUOTES, 'UTF-8') . "'>";
+                    echo "</td>";
+                    echo "<td>$anuncio->id</td>";
+                    echo "<td>$anuncio->nombre</td>";
+                    echo "<td>$anuncio->precio €</td> ";
+                    echo "<td>$anuncio->estado</td>";
+                    ?>
+                    <td>
+                    <a class="button" href="/anuncio/edit/<?= $anuncio->id ?>">Editar anuncio</a>
+                    <a class="button" href="/anuncio/delete/<?= $anuncio->id ?>">Borrar anuncio</a>
+                    </td>
+                    <?php
+
+                    echo "</tr>";
+                }
+                ?>
+
+
+
+
+            </table>
 
         <?php } ?>
 
@@ -101,6 +113,3 @@ Auth::oneRole(['ROLE_ADMIN', 'ROLE_VENDOR']);
 </body>
 
 </html>
-
-
-

@@ -45,7 +45,7 @@ class UserController extends Controller
 
     public function create()
     {
-        Auth::admin();  # Solo para administradores
+    # Solo para administradores
 
         $this->loadView('user/create');
     }
@@ -53,7 +53,7 @@ class UserController extends Controller
     public function store()
     {
 
-        Auth::admin(); # Operación sólo para administradores.
+         # Operación sólo para administradores.
 
         if (empty($_POST['guardar']))
             throw new Exception('No se recibió el formulario');
@@ -70,7 +70,7 @@ class UserController extends Controller
         $user->displayname = $_POST['displayname'];
         $user->email = $_POST['email'];
         $user->phone = $_POST['phone'];
-        $user->addRole('ROLE_USER', $_POST['roles']);
+        $user->addRole('ROLE_USER','ROLE_VENDOR');
 
         try {
 
@@ -89,7 +89,7 @@ class UserController extends Controller
 
             $user->update();
             Session::success("Nuevo usuario $user->displayname creado con éxito.");
-            redirect("/User/list");
+            redirect("/");
         
 
         

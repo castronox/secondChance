@@ -7,7 +7,7 @@
 
 	<!-- META -->
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<meta name='description' content='Lista de libros de <?= APP_NAME ?>'>
+	<meta name='description' content='Lista de anuncios de <?= APP_NAME ?>'>
 	<meta name='author' content='Cristian Castro'>
 
 
@@ -17,6 +17,8 @@
 
 	<!-- CSS -->
 	<?= (TEMPLATE)::getCss() ?>
+
+	
 </head>
 
 <body>
@@ -24,15 +26,19 @@
 	<?= (TEMPLATE)::getHeader('AÑADE AQUÍ EL HEADER') ?>
 	<?= (TEMPLATE)::getMenu() ?>
 	<?= (TEMPLATE)::getFlashes() ?>
+	
+	
+
+	
 
 	<main>
 		<h1><?= APP_NAME ?></h1>
 
-		<h2>Nuevo anuncio</h2>
+		<h2>Editar anuncio</h2>
 		<div class="flex-container">
 			<section class="flex1 centrado">
-				<form method="POST" enctype="multipart/form-data" action="/anuncio/edit">
-					<input type="hidden" name="idusuario" value="<?= $user->id ?>">
+				<form method="POST" enctype="multipart/form-data" action="/anuncio/update">
+					<input type="hidden" name="id" value="<?= $anuncio->id ?>">
 					<label>Nombre</label>
 					<input type="text" name="nombre" value="<?= old('nombre', $anuncio->nombre) ?>">
 					<br>

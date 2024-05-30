@@ -19,7 +19,7 @@ class anuncioController extends Controller
 
         $filtro = Filter::apply('anuncios');
         $limit = RESULTS_PER_PAGE;
-
+       
         #SI NO HAY FILTRO
         if ($filtro) {
             $total = Anuncio::filteredResults($filtro);
@@ -58,7 +58,7 @@ class anuncioController extends Controller
     #                                                                      
     #       
     public function create(){
-        Auth::oneRole(['ROLE_ADMIN','ROLE_VENDOR']);
+        Auth::oneRole(['ROLE_USER','ROLE_ADMIN','ROLE_VENDOR']);
         
         view('anuncio/create',[
             'user' => Login::user()
@@ -182,7 +182,7 @@ class anuncioController extends Controller
 
 
 		# Recuperar el resto de campos
-        $anuncio->iduser = $this->request->post('idusuario');
+        
         $anuncio->nombre = $this->request->post('nombre');
         $anuncio->descripcion = $this->request->post('descripcion');
         $anuncio->anyo = $this->request->post('anyo');

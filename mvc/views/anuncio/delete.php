@@ -1,5 +1,5 @@
 <?php
-Auth::oneRole(["ROLE_ADMIN", "ROLE_LIBRARIAN"]);
+Auth::oneRole(["ROLE_ADMIN", "ROLE_VENDOR"]);
 ?>
 <!DOCTYPE html>
 <html lang="es">

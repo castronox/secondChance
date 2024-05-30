@@ -103,6 +103,8 @@ class Template implements TemplateInterface
         $html = "<menu>";
         $html .= "<li><a href='/'>Inicio</a></li>";
         $html .= "<li><a href='/Anuncio/list'>Anuncios</a></li>";
+        $html .= "<li><a href='/User/create'>Alta usuario</a></li>";
+        $html .= "<li><a href='/Contacto'>Contacto</a></li>";
 
         if (Login::oneRole(['ROLE_VENDOR'])){
         $html .= "<li><a href='/Anuncio/create'>Nuevo anuncio</a></li>";
@@ -115,7 +117,7 @@ class Template implements TemplateInterface
         // enlace a los tests de ejemplo (solamente administrador)    
         if (Login::isAdmin() && (DEBUG)) {
             $html .= "<li><a href='/test'>Lista de test</a></li>";
-            $html .= "<li><a href='/User/create'>Nuevo usuario</a></li>";
+           
             $html .= "<li><a href='/User/list'>Usuarios</a></li>";
         }
         // entrada adicional de ejemplo:
